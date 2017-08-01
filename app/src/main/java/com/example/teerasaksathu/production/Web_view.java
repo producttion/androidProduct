@@ -11,7 +11,7 @@ public class Web_view extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
 
-        String url = "https://www.google.com/";
+        String url = "https://my-project-1499687014213.firebaseapp.com";
         WebView webView = (WebView) findViewById(R.id.web_view);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(url);

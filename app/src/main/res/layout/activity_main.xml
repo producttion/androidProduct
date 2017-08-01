@@ -7,6 +7,13 @@
     tools:context="com.example.teerasaksathu.production.MainActivity">
 
     <Button
+        android:id="@+id/button"
+        android:layout_width="130dp"
+        android:layout_height="68dp"
+        android:text="changnumber"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="48dp" />
+    <Button
         android:id="@+id/openweb"
         android:layout_width="297dp"
         android:layout_height="168dp"
@@ -16,10 +23,10 @@
         android:layout_marginTop="8dp"
         android:text="OpenWebview"
         android:onClick="btnopenweb"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </android.support.constraint.ConstraintLayout>
