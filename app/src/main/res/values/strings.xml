@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Production</string>
+    <string-array name="names">
+        <item>เสื้อผ้า</item>
+        <item>อาหาร</item>
+        <item>เครื่องดื่ม</item>
+    </string-array>
+
 </resources>
+
+
