@@ -36,7 +36,8 @@
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteY="278dp"
-        tools:layout_editor_absoluteX="8dp" />
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
 
