@@ -1,5 +1,7 @@
 package com.example.teerasaksathu.production;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -29,15 +31,14 @@ public class FromActivity extends AppCompatActivity {
 
     TextView connectFireBase;
     Spinner spinner2;
-
-
-    EditText nameEditText,
-            surnameEditText,
-            telEditText;
-    String nameString = "",
-            surnameString = "",
-            telString = "";
+    EditText nameEditText;
+    EditText surnameEditText;
+    EditText telEditText;
+    String nameString = "";
+    String surnameString = "";
+    String telString = "";
     Button buttonbooking;
+    EditText[] viewNeedToValidate = {nameEditText, surnameEditText, telEditText};
 
 
     @Override
@@ -53,15 +54,12 @@ public class FromActivity extends AppCompatActivity {
         spinner2 = (Spinner) findViewById(R.id.spinner2);
 //        buttonbooking = findViewById(R.id.buttonBooking);
 
-       // ArrayAdapter to Spinner and dropdow
+        // ArrayAdapter to Spinner and dropdow
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(FromActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.names));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(myAdapter);
-
-
-
 
 
         //Connect To Firebase
@@ -88,30 +86,47 @@ public class FromActivity extends AppCompatActivity {
         });
     }
 
-    public void conFirmInPutDat(View view) {
+    public void conFirmInPutData(View view) {
+        int i = 0;
+        if (nameEditText.getText().toString().length() == 0) {
+            nameEditText.setError("โปรดกรอกข้อมูล");
+            i++;
+        }
+        if (surnameEditText.getText().toString().length() == 0) {
+            surnameEditText.setError("โปรดกรอกข้อมูล");
+            i++;
+        }
+        if (telEditText.getText().toString().length() == 0) {
+            telEditText.setError("โปรดกรอกข้อมูล");
+            i++;
+        }
+        if (i > 0) {
 
-        nameString = nameEditText.getText().toString().trim();
-        surnameString = surnameEditText.getText().toString().trim();
-        telString = telEditText.getText().toString().trim();
+            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+            builder.setMessage("gg");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
+                }
+            });
+            builder.show();
 
-        connectFireBase.setText(nameString);
-
-
-        if (nameString == "1") {
-
-            myAlert myAlert = new myAlert();
-            myAlert.myDialog(getApplicationContext(), "มีช่องว่าง", "กรุณากรอกให้ครับ");
-
+//            myAlert alert = new myAlert();
+//            alert.myDialog(getApplicationContext(), "ผิดพลาด", "โปรดกรอกข้อมูลให้ครบทัุกช่อง");
         } else {
             addDataTofireBase();
-            Toast.makeText(getApplicationContext(), "ตกลง", Toast.LENGTH_LONG).show();
-
+            Toast.makeText(getApplicationContext(), "บันทึกข้อมูลเสร็จสิ้น", Toast.LENGTH_LONG).show();
         }
 
     }
 
 
     public void addDataTofireBase() {
+
+        nameString = nameEditText.getText().toString().trim();
+        surnameString = surnameEditText.getText().toString().trim();
+        telString = telEditText.getText().toString().trim();
 
         Map<String, Object> vul = new HashMap<String, Object>();
 
@@ -126,54 +141,9 @@ public class FromActivity extends AppCompatActivity {
         return addLocktarad;
 
     }
-
 }
 
-class addLocktarad {
-    String nameString, surnameString, telString;
 
-    public addLocktarad() {
-        nameString = "none";
-        surnameString = "none";
-        telString = "none";
-    }
-
-    public addLocktarad(String nameString, String surnameString, String telString) {
-        this.nameString = nameString;
-        this.surnameString = surnameString;
-        this.telString = telString;
-
-    }
-
-    public String getNameString() {
-        return nameString;
-    }
-
-    public String getSurnameString() {
-        return surnameString;
-    }
-
-    public String getTelString() {
-        return telString;
-    }
-
-    public void setNameString(String nameString) {
-        this.nameString = nameString;
-    }
-
-    public void setSurnameString(String surnameString) {
-        this.surnameString = surnameString;
-    }
-
-    public void setTelString(String telString) {
-        this.telString = telString;
-    }
-
-
-
-
-
-}
 
 
 
