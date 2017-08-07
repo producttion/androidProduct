@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "87472810879",
-    "firebase_url": "https://production-636ab.firebaseio.com",
-    "project_id": "production-636ab",
-    "storage_bucket": "production-636ab.appspot.com"
+    "project_number": "530710859012",
+    "firebase_url": "https://appjongtaladth.firebaseio.com",
+    "project_id": "appjongtaladth",
+    "storage_bucket": "appjongtaladth.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:87472810879:android:b896dfa46338ef18",
+        "mobilesdk_app_id": "1:530710859012:android:b896dfa46338ef18",
         "android_client_info": {
           "package_name": "com.example.teerasaksathu.production"
         }
       },
       "oauth_client": [
         {
-          "client_id": "87472810879-ad8k5vv0etjegk3eh1fejo7me632v3cp.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.teerasaksathu.production",
-            "certificate_hash": "900ca2b4259b1a8fe02913e6d6ef803ed545af06"
-          }
-        },
-        {
-          "client_id": "87472810879-g1l9d8tjald4nvalne3qvn7hohaj1upq.apps.googleusercontent.com",
+          "client_id": "530710859012-8823mmqg9i0cvkraca0qkqd26ip58is6.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCKRGcE8qluFWPA32DB006RKJxwMA7YH7Q"
+          "current_key": "AIzaSyAhM9vhl7ofvy30AgTykVYk0Gc-hG7co78"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "87472810879-g1l9d8tjald4nvalne3qvn7hohaj1upq.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
