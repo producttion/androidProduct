@@ -70,7 +70,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         etName = (EditText) findViewById(R.id.etName);
         etSurname = (EditText) findViewById(R.id.etSurname);
         etPhonenumber = (EditText) findViewById(R.id.etPhonenumber);
-        cbReservationCancel = (CheckBox) findViewById(R.id.cbCancelReservation);
+  //      cbReservationCancel = (CheckBox) findViewById(R.id.cbCancelReservation);
         btnConfirm = (Button) findViewById(R.id.btnConfirm);
         btnCancel = (Button) findViewById(R.id.btnCancel);
         spProductType = (Spinner) findViewById(R.id.spProductType);
