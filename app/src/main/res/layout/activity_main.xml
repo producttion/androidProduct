@@ -70,4 +70,12 @@
                 android:text="ToggleButton" />
         </LinearLayout>
     </LinearLayout>
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckedTextView"
+        tools:layout_editor_absoluteX="-98dp"
+        tools:layout_editor_absoluteY="113dp" />
 </android.support.constraint.ConstraintLayout>
