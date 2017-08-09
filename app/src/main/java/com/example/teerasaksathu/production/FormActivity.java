@@ -128,7 +128,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
             etPhonenumber.setError("Input something");
             numberOfError++;
         }
-//test
+
         if (numberOfError > 0)
             return false;
         else
