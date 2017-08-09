@@ -13,69 +13,7 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <LinearLayout
-            android:layout_width="29dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="1">
 
-            <ToggleButton
-                android:id="@+id/toggleButton"
-                android:layout_width="match_parent"
-                android:layout_height="32dp"
-                android:text="ToggleButton" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton8"
-                android:layout_width="match_parent"
-                android:layout_height="31dp"
-                android:text="ToggleButton" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton7"
-                android:layout_width="match_parent"
-                android:layout_height="26dp"
-                android:text="ToggleButton"
-                android:layout_weight="0.01" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton6"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="ToggleButton" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton5"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="ToggleButton" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton4"
-                android:layout_width="26dp"
-                android:layout_height="30dp"
-                android:text="ToggleButton" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton3"
-                android:layout_width="28dp"
-                android:layout_height="26dp"
-                android:text="ToggleButton" />
-
-            <ToggleButton
-                android:id="@+id/toggleButton2"
-                android:layout_width="28dp"
-                android:layout_height="29dp"
-                android:checked="false"
-                android:text="ToggleButton" />
-        </LinearLayout>
     </LinearLayout>
 
-    <CheckedTextView
-        android:id="@+id/checkedTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CheckedTextView"
-        tools:layout_editor_absoluteX="-98dp"
-        tools:layout_editor_absoluteY="113dp" />
 </android.support.constraint.ConstraintLayout>
