@@ -1,6 +1,7 @@
 package com.example.teerasaksathu.production;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,6 +45,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
 
         initInstances();
 
+
         //Connect to firebase
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         myRef = firebaseDatabase.getReference();
@@ -70,7 +72,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         etName = (EditText) findViewById(R.id.etName);
         etSurname = (EditText) findViewById(R.id.etSurname);
         etPhonenumber = (EditText) findViewById(R.id.etPhonenumber);
-  //      cbReservationCancel = (CheckBox) findViewById(R.id.cbCancelReservation);
+        //      cbReservationCancel = (CheckBox) findViewById(R.id.cbCancelReservation);
         btnConfirm = (Button) findViewById(R.id.btnConfirm);
         btnCancel = (Button) findViewById(R.id.btnCancel);
         spProductType = (Spinner) findViewById(R.id.spProductType);
@@ -79,6 +81,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spProductType.setAdapter(myAdapter);
 
+
         btnConfirm.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
     }
@@ -86,17 +89,15 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == btnConfirm) {
-            if (cbReservationCancel.isChecked()) {
-                Toast.makeText(getApplicationContext(), "ยกเลิกการจองเเสร็จสิ้น", Toast.LENGTH_LONG).show();
-            } else {
-                if (checkData()) {
-                    addDataTofireBase();
-                    Toast.makeText(getApplicationContext(), "บันทึกข้อมูลเสร็จสิ้น", Toast.LENGTH_LONG).show();
-                } else
-                    Toast.makeText(getApplicationContext(), "โปรดกรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_LONG).show();
-            }
-        } else if (view == btnCancel) {
+            if (checkData()) {
+                addDataTofireBase();
+                Toast.makeText(getApplicationContext(), "บันทึกข้อมูลเสร็จสิ้น", Toast.LENGTH_LONG).show();
+            } else
+                Toast.makeText(getApplicationContext(), "โปรดกรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_LONG).show();
 
+        } else if (view == btnCancel) {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -106,7 +107,6 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         String phonenumber = etPhonenumber.getText().toString().trim();
         String productType = spProductType.getSelectedItem().toString();
         Locktalad locktalad = new Locktalad(name, surname, phonenumber, productType);
-
         Map<String, Object> vul = new HashMap<String, Object>();
 
         vul.put("user/" + name, locktalad);

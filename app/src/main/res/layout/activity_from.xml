@@ -41,7 +41,7 @@
                 android:id="@+id/etName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1.61"
                 android:inputType="text"
                 android:textColor="#000000" />
 
@@ -65,7 +65,7 @@
                 android:id="@+id/etSurname"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1.59"
                 android:inputType="text"
                 android:textColor="#000000" />
 
@@ -89,7 +89,7 @@
                 android:id="@+id/etPhonenumber"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1.59"
                 android:inputType="number"
                 android:textColor="#000000" />
 
@@ -113,7 +113,7 @@
                 android:id="@+id/spProductType"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1.58"
                 android:textColor="#000000">
 
             </Spinner>
@@ -141,6 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="ยกเลิก"
+
             android:textColor="#000000" />
 
     </LinearLayout>
