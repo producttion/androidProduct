@@ -23,8 +23,6 @@
         <activity android:name=".FormActivity" />
         <activity android:name=".Report"></activity>
 
-        <activity android:name=".Web_view" />
-
 
     </application>
 

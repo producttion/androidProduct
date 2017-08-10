@@ -1,8 +1,8 @@
 package com.example.teerasaksathu.production;
 
-import android.content.DialogInterface;
+
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -37,6 +37,9 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     Button btnCancel;
     Spinner spProductType;
     DatabaseReference myRef;
+    TextView newTextView;
+    Intent intent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,30 +48,34 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
 
         initInstances();
 
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+            myRef = firebaseDatabase.getReference();
 
-        //Connect to firebase
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = firebaseDatabase.getReference();
 
+            myRef.child("lock").child(bundle.getString("lockID")).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Map map = (Map) dataSnapshot.getValue();
+                    etName.setText(String.valueOf(map.get("name")));
+                    etSurname.setText(String.valueOf(map.get("surname")));
+                    etPhonenumber.setText(String.valueOf(map.get("phonenumber")));
 
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Map map = (Map) dataSnapshot.getValue();
-                String vul = String.valueOf(map.get("test"));
+                }
 
-                //เหลือรอหน้าเสร็จ เพื่อเช็ค ว่างหรือ ไม่ กรอกครบ ไหม ตัวเลขเหลือป่าว
-            }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+        }
 
-            }
-        });
 
     }
 
     private void initInstances() {
+
         etName = (EditText) findViewById(R.id.etName);
         etSurname = (EditText) findViewById(R.id.etSurname);
         etPhonenumber = (EditText) findViewById(R.id.etPhonenumber);
@@ -80,10 +87,8 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.names));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spProductType.setAdapter(myAdapter);
+        newTextView = (TextView) findViewById(R.id.textView2);
 
-
-        btnConfirm.setOnClickListener(this);
-        btnCancel.setOnClickListener(this);
     }
 
     @Override
