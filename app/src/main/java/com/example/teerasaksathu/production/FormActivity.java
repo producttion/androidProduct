@@ -32,13 +32,11 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     EditText etName;
     EditText etSurname;
     EditText etPhonenumber;
-    CheckBox cbReservationCancel;
+    TextView tvHeader;
     Button btnConfirm;
     Button btnCancel;
     Spinner spProductType;
     DatabaseReference myRef;
-    TextView newTextView;
-    Intent intent;
 
 
     @Override
@@ -61,6 +59,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
                     etName.setText(String.valueOf(map.get("name")));
                     etSurname.setText(String.valueOf(map.get("surname")));
                     etPhonenumber.setText(String.valueOf(map.get("phonenumber")));
+                    tvHeader.setText("รายละเอียดล็อค");
 
                 }
 
@@ -87,7 +86,10 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.names));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spProductType.setAdapter(myAdapter);
-        newTextView = (TextView) findViewById(R.id.textView2);
+        tvHeader = (TextView) findViewById(R.id.tvHeader);
+
+        btnConfirm.setOnClickListener(this);
+        btnCancel.setOnClickListener(this);
 
     }
 

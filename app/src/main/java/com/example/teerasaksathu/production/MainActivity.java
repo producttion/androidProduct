@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnA1;
     Button btnA2;
     TextView textView;
@@ -40,15 +40,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         myRef = firebaseDatabase.getReference();
 
 
-
-
         myRef.child("lock").child("id").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map map = (Map) dataSnapshot.getValue();
-                lockID = String.valueOf(map.get("lockid"));
+
+                lockID = String.valueOf(map.get("name"));
                 lockStatus = (boolean) map.get("status");
-                textView.setText(btnA1.getResources().getResourceName(btnA1.getId()));
+//                textView.setText(btnA1.getResources().getResourceName(btnA1.getId()));
 
             }
 
@@ -66,25 +65,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if (view == btnA1 && lockStatus){
+        if (view == btnA1) {
             if (lockStatus) {
-                    Intent intent = new Intent(getApplicationContext(), FormActivity.class);
-                    intent.putExtra("lockID", lockID);
-                    startActivity(intent);
-//                textView.setText("Go to information page");
+
+                MyAlert myAlert = new MyAlert();
+                myAlert.myDialog(MainActivity.this,"รายละเอียดการจอง", lockID);
+//                Intent intent = new Intent(getApplicationContext(), FormActivity.class);
+//                intent.putExtra("lockID", lockID);
+//                startActivity(intent);
             } else {
-                textView.setText("Go to register page");
+                Intent intent = new Intent(getApplicationContext(), FormActivity.class);
+                startActivity(intent);
             }
         } else if (view == btnA2) {
             if (lockStatus) {
-//                    Intent intent = new Intent(getApplicationContext(), FormActivity.class);
-//                    intent.putExtra("lockID", lockID);
-//                    startActivity(intent);
-                textView.setText("Go to information page");
+
             } else {
-                textView.setText("Go to register page");
+
             }
 
         }
+
     }
+
+
 }

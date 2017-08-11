@@ -33,11 +33,11 @@
 
         <Button
             android:id="@+id/btnA2"
-            android:layout_width="49dp"
+            android:layout_width="wrap_content"
             android:layout_height="37dp"
             android:layout_column="0"
             android:layout_row="1"
-            android:text="Button" />
+            android:text="id2" />
 
         <Button
             android:id="@+id/button19"
@@ -49,11 +49,11 @@
 
         <Button
             android:id="@+id/btnA1"
-            android:layout_width="75dp"
+            android:layout_width="wrap_content"
             android:layout_height="37dp"
             android:layout_column="0"
             android:layout_row="0"
-            android:text="A1" />
+            android:text="id" />
 
         <Button
             android:id="@+id/button21"
