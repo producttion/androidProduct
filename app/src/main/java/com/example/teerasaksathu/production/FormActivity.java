@@ -48,29 +48,8 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-            myRef = firebaseDatabase.getReference();
-
-
-            myRef.child("lock").child(bundle.getString("lockID")).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    Map map = (Map) dataSnapshot.getValue();
-                    etName.setText(String.valueOf(map.get("name")));
-                    etSurname.setText(String.valueOf(map.get("surname")));
-                    etPhonenumber.setText(String.valueOf(map.get("phonenumber")));
-                    tvHeader.setText("รายละเอียดล็อค");
-
-                }
-
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });
+           tvHeader.setText("รายละเอียดล็อค " + bundle.getString("lockID")); ;
         }
-
-
     }
 
     private void initInstances() {

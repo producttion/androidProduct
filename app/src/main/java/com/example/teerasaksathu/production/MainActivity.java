@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textView;
     String lockID;
     boolean lockStatus;
-
     DatabaseReference myRef;
 
 
@@ -33,22 +32,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnA1 = (Button) findViewById(R.id.btnA1);
         btnA2 = (Button) findViewById(R.id.btnA2);
-        textView = (TextView) findViewById(R.id.textView);
+        btnA1.setOnClickListener(this);
+        btnA2.setOnClickListener(this);
 
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         myRef = firebaseDatabase.getReference();
 
 
-        myRef.child("lock").child("id").addValueEventListener(new ValueEventListener() {
+
+
+
+
+    }
+    @Override
+    public void onClick(View view) {
+        if (view == btnA1) {
+            lockChecking("A1");
+        } else if (view == btnA2) {
+            lockChecking("A2");
+        }
+    }
+
+    private void lockChecking(String id) {
+        myRef.child("lock").child(id).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map map = (Map) dataSnapshot.getValue();
 
-                lockID = String.valueOf(map.get("name"));
+                lockID = String.valueOf(map.get("lockID"));
                 lockStatus = (boolean) map.get("status");
-//                textView.setText(btnA1.getResources().getResourceName(btnA1.getId()));
-
             }
 
             @Override
@@ -56,36 +69,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
-
-
-        btnA1.setOnClickListener(this);
-
-
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (view == btnA1) {
-            if (lockStatus) {
-
-                MyAlert myAlert = new MyAlert();
-                myAlert.myDialog(MainActivity.this,"รายละเอียดการจอง", lockID);
-//                Intent intent = new Intent(getApplicationContext(), FormActivity.class);
-//                intent.putExtra("lockID", lockID);
-//                startActivity(intent);
-            } else {
-                Intent intent = new Intent(getApplicationContext(), FormActivity.class);
-                startActivity(intent);
-            }
-        } else if (view == btnA2) {
-            if (lockStatus) {
-
-            } else {
-
-            }
-
+        if (lockStatus) {
+            MyAlert myAlert = new MyAlert();
+            myAlert.myDialog(MainActivity.this,"รายละเอียดการจอง", lockID);
+        } else {
+            Intent intent = new Intent(getApplicationContext(), FormActivity.class);
+            intent.putExtra("lockID",lockID);
+            startActivity(intent);
         }
-
     }
 
 
