@@ -11,18 +11,15 @@ import android.view.View;
 
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,11 +42,14 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_from);
 
         initInstances();
+        String getlock;
 
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-           tvHeader.setText("รายละเอียดล็อค " + bundle.getString("lockID")); ;
-        }
+
+//        Bundle bundle = getIntent().getExtras();
+//        getlock = bundle.getString("lockID");
+//        if (bundle != null) {
+//           tvHeader.setText("รายละเอียดล็อค " + getlock);
+//        }
     }
 
     private void initInstances() {
@@ -69,9 +69,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
 
         btnConfirm.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
-
     }
-
     @Override
     public void onClick(View view) {
         if (view == btnConfirm) {
@@ -82,21 +80,31 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(getApplicationContext(), "โปรดกรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_LONG).show();
 
         } else if (view == btnCancel) {
+
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
         }
     }
-
     private void addDataTofireBase() {
         String name = etName.getText().toString().trim();
         String surname = etSurname.getText().toString().trim();
         String phonenumber = etPhonenumber.getText().toString().trim();
         String productType = spProductType.getSelectedItem().toString();
-        Locktalad locktalad = new Locktalad(name, surname, phonenumber, productType);
-        Map<String, Object> vul = new HashMap<String, Object>();
 
-        vul.put("user/" + name, locktalad);
-        myRef.updateChildren(vul);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.putExtra("name", name);
+        intent.putExtra("surname", surname);
+        intent.putExtra("phonenumber", phonenumber);
+        intent.putExtra("productType", productType);
+        startActivity(intent);
+
+
+
+//        Locktalad locktalad = new Locktalad(name, surname, phonenumber, productType);
+//        Map<String, Object> vul = new HashMap<String, Object>();
+//
+//        vul.put("user/" + name, locktalad);
+//        myRef.updateChildren(vul);
     }
 
 
