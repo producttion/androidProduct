@@ -16,7 +16,7 @@ public class Report extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
-        mListView = (ListView) findViewById(R.id.Lv_user);
+        mListView = (ListView) findViewById(R.id.lv_user);
 
 
 
