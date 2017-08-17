@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+
 import com.google.firebase.database.DatabaseReference;
 
 
@@ -44,11 +45,11 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         String getlock;
 
 
-        Bundle bundle = getIntent().getExtras();
-        getlock = bundle.getString("lockID");
-        if (bundle != null) {
-            tvHeader.setText("รายละเอียดล็อค " + getlock);
-        }
+//        Bundle bundle = getIntent().getExtras();
+//        getlock = bundle.getString("lockID");
+//        if (bundle != null) {
+//           tvHeader.setText("รายละเอียดล็อค " + getlock);
+//        }
     }
 
     private void initInstances() {
@@ -69,7 +70,6 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         btnConfirm.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View view) {
         if (view == btnConfirm) {
@@ -85,7 +85,6 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
     }
-
     private void addDataTofireBase() {
         String name = etName.getText().toString().trim();
         String surname = etSurname.getText().toString().trim();
@@ -98,6 +97,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         intent.putExtra("phonenumber", phonenumber);
         intent.putExtra("productType", productType);
         startActivity(intent);
+
 
 
 //        Locktalad locktalad = new Locktalad(name, surname, phonenumber, productType);
