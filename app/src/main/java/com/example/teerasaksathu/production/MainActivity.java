@@ -1,4 +1,5 @@
 package com.example.teerasaksathu.production;
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,9 +16,9 @@ import android.widget.Button;
 //
 //import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    Button btnA1,btnA2,btnA3,btnA4,btnA5,btnA6,btnA7,btnA8,btnA9,btnA10,btnA11,btnA12,btnA13,btnA14,btnA15,btnA16,btnA17;
-   Button btnA18,btnA19,btnA20,btnA21;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Button btnA1, btnA2, btnA3, btnA4, btnA5, btnA6, btnA7, btnA8, btnA9, btnA10, btnA11, btnA12, btnA13, btnA14, btnA15, btnA16, btnA17;
+    Button btnA18, btnA19, btnA20, btnA21;
     String lockID;
     boolean lockStatus;
 //    DatabaseReference myRef;
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnA20 = (Button) findViewById(R.id.btn20);
 
 
-
         btnA1.setOnClickListener(this);
         btnA2.setOnClickListener(this);
         btnA3.setOnClickListener(this);
@@ -73,9 +73,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnA18.setOnClickListener(this);
         btnA19.setOnClickListener(this);
         btnA20.setOnClickListener(this);
-
-
-
 
 
 //
@@ -119,15 +116,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void lockChecking() {
+    public void lockChecking(String lockID, boolean lockStatus) {
 
         if (lockStatus) {
             MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(MainActivity.this,"รายละเอียดการจอง", lockID);
+            myAlert.myDialog(MainActivity.this, "รายละเอียดล็อค", lockID);
 
         } else {
             Intent intent = new Intent(getApplicationContext(), FormActivity.class);
-            intent.putExtra("lockID",lockID);
+            intent.putExtra("lockID", lockID);
             startActivity(intent);
         }
     }
@@ -136,80 +133,82 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if (view == btnA1) {
-            lockChecking();
-        } if (view == btnA2) {
-            lockChecking();
+            lockChecking("A1", false);
+        }
+        if (view == btnA2) {
+            lockChecking("A2", false);
 
-        } if (view == btnA3) {
-            lockChecking();
+        }
+        if (view == btnA3) {
+            lockChecking("A3", false);
 
         }
         if (view == btnA4) {
-            lockChecking();
+            lockChecking("A4", false);
 
         }
         if (view == btnA5) {
-            lockChecking();
+            lockChecking("A5", false);
 
         }
         if (view == btnA6) {
-            lockChecking();
+            lockChecking("A6", false);
 
         }
         if (view == btnA7) {
-            lockChecking();
+            lockChecking("A7", false);
 
         }
         if (view == btnA8) {
-            lockChecking();
+            lockChecking("A8", false);
 
         }
         if (view == btnA9) {
-            lockChecking();
+            lockChecking("A9", false);
 
         }
         if (view == btnA10) {
-            lockChecking();
+            lockChecking("A10", false);
 
         }
         if (view == btnA11) {
-            lockChecking();
+            lockChecking("A11", false);
 
         }
         if (view == btnA12) {
-            lockChecking();
+            lockChecking("A12", false);
 
         }
         if (view == btnA13) {
-            lockChecking();
+            lockChecking("A13", true);
 
         }
         if (view == btnA14) {
-            lockChecking();
+            lockChecking("A14", true);
 
         }
         if (view == btnA15) {
 
-            lockChecking();
+            lockChecking("A15", true);
         }
         if (view == btnA16) {
-            lockChecking();
+            lockChecking("A16", true);
 
         }
         if (view == btnA17) {
-            lockChecking();
+            lockChecking("A17", true);
 
         }
         if (view == btnA18) {
-            lockChecking();
+            lockChecking("A18", true);
 
         }
         if (view == btnA19) {
-            lockChecking();
+            lockChecking("A19", true);
 
         }
         if (view == btnA20) {
-            lockChecking();
+            lockChecking("A20", true);
 
         }
 
