@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String telUser = bundle.getString("phonenumber");
         String productType = bundle.getString("productType");
 
+
         Log.v("data Intent :", name);
         Log.v("data Intent :", surname);
         Log.v("data Intent :", telUser);
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (lockStatus) {
             MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(MainActivity.this, "รายละเอียดล็อค", lockID);
+            myAlert.myDialog(MainActivity.this, "รายละเอียดล็อค "+lockID,"ldvdv","dcdc","1233","5657657");
 
         } else {
             Intent intent = new Intent(getApplicationContext(), FormActivity.class);
