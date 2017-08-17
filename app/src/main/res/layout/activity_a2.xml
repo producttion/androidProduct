@@ -6,4 +6,287 @@
     android:layout_height="match_parent"
     tools:context="com.example.teerasaksathu.production.A2Activity">
 
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="383dp"
+        android:layout_height="420dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="87dp">
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="6"
+            android:text="A9" />
+
+        <Button
+            android:id="@+id/btn14"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:text="A14" />
+
+        <Button
+            android:id="@+id/btn15"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:text="A15" />
+
+        <Button
+            android:id="@+id/btn16"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:text="A16" />
+
+        <Button
+            android:id="@+id/btn17"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="4"
+            android:text="A17" />
+
+        <Button
+            android:id="@+id/btn13"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:layout_rowSpan="1"
+            android:text="A13" />
+
+        <Button
+            android:id="@+id/btn10"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="6"
+            android:text="A10" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="A2" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="A3" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="6"
+            android:text="A8" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:text="A5" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:text="A6" />
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:text="A7" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="A4" />
+
+        <Button
+            android:id="@+id/btn11"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="6"
+            android:text="A11" />
+
+        <Button
+            android:id="@+id/btn12"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_row="6"
+            android:text="A12" />
+
+        <Button
+            android:id="@+id/btn18"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_row="4"
+            android:text="A18" />
+
+        <Button
+            android:id="@+id/btn19"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_row="4"
+            android:text="A19" />
+
+        <Button
+            android:id="@+id/btn20"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_row="4"
+            android:text="A20" />
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="A1" />
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA16"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="2"-->
+        <!--android:layout_row="5"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA17"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="0"-->
+        <!--android:layout_row="6"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA18"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="2"-->
+        <!--android:layout_row="7"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA19"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="1"-->
+        <!--android:layout_row="9"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA20"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="2"-->
+        <!--android:layout_row="9"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA21"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="3"-->
+        <!--android:layout_row="7"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA22"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="4"-->
+        <!--android:layout_row="7"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA23"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="5"-->
+        <!--android:layout_row="7"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA24"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="5"-->
+        <!--android:layout_row="9"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA25"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="6"-->
+        <!--android:layout_row="7"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA26"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="6"-->
+        <!--android:layout_row="9"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA27"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="0"-->
+        <!--android:layout_row="4"-->
+        <!--android:text="Button" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btnA28"-->
+        <!--android:layout_width="49dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_column="3"-->
+        <!--android:layout_row="9"-->
+        <!--android:text="Button" />-->
+
+    </GridLayout>
 </android.support.constraint.ConstraintLayout>

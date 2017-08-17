@@ -12,7 +12,7 @@ public class MyAlert {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setCancelable(false);
         builder.setTitle(title);
-        builder.setMessage(name + surname +tel+ productType);
+        builder.setMessage(name + surname + tel + productType);
 
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override

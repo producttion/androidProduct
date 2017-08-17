@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (lockStatus) {
             MyAlert myAlert = new MyAlert();
-            myAlert.myDialog(MainActivity.this, "รายละเอียดล็อค "+lockID,"ldvdv","dcdc","1233","5657657");
+            myAlert.myDialog(MainActivity.this, "รายละเอียดล็อค "+lockID,"fdsferfd","cvfdv","ewwqwe1231","1232131");
 
         } else {
             Intent intent = new Intent(getApplicationContext(), FormActivity.class);

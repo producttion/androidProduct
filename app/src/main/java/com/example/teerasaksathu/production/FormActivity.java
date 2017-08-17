@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 
 
@@ -15,7 +16,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +34,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     Button btnCancel;
     Spinner spProductType;
     DatabaseReference myRef;
+    String getlock;
 
 
     @Override
@@ -42,14 +43,17 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_from);
 
         initInstances();
-        String getlock;
 
 
-//        Bundle bundle = getIntent().getExtras();
-//        getlock = bundle.getString("lockID");
-//        if (bundle != null) {
-//           tvHeader.setText("รายละเอียดล็อค " + getlock);
-//        }
+        Bundle bundle = getIntent().getExtras();
+        getlock = bundle.getString("lockID");
+
+
+
+
+        if (bundle != null) {
+            tvHeader.setText("รายละเอียดล็อค " + getlock);
+        }
     }
 
     private void initInstances() {
@@ -70,12 +74,13 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         btnConfirm.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View view) {
         if (view == btnConfirm) {
             if (checkData()) {
+//                Toast.makeText(getApplicationContext(), "บันทึกข้อมูลเสร็จสิ้น", Toast.LENGTH_LONG).show();
                 addDataTofireBase();
-                Toast.makeText(getApplicationContext(), "บันทึกข้อมูลเสร็จสิ้น", Toast.LENGTH_LONG).show();
             } else
                 Toast.makeText(getApplicationContext(), "โปรดกรอกข้อมูลให้ครบทุกช่อง", Toast.LENGTH_LONG).show();
 
@@ -85,19 +90,70 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
     }
+
     private void addDataTofireBase() {
+
         String name = etName.getText().toString().trim();
         String surname = etSurname.getText().toString().trim();
         String phonenumber = etPhonenumber.getText().toString().trim();
         String productType = spProductType.getSelectedItem().toString();
 
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.putExtra("name", name);
-        intent.putExtra("surname", surname);
-        intent.putExtra("phonenumber", phonenumber);
-        intent.putExtra("productType", productType);
-        startActivity(intent);
 
+        Log.v("getlock", getlock);
+
+
+        if (getlock == "A1") {
+            Log.v("A1 st", getlock);
+
+
+            Intent intent = new Intent(getApplicationContext(), A1Activity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("surname", surname);
+            intent.putExtra("phonenumber", phonenumber);
+            intent.putExtra("productType", productType);
+            startActivity(intent);
+
+        } else if (getlock == "A2") {
+            Intent intent = new Intent(getApplicationContext(), A2Activity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("surname", surname);
+            intent.putExtra("phonenumber", phonenumber);
+            intent.putExtra("productType", productType);
+            startActivity(intent);
+
+        } else if (getlock == "A3") {
+            Intent intent = new Intent(getApplicationContext(), A3Activity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("surname", surname);
+            intent.putExtra("phonenumber", phonenumber);
+            intent.putExtra("productType", productType);
+            startActivity(intent);
+
+        } else if (getlock == "A4") {
+            Intent intent = new Intent(getApplicationContext(), A4Activity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("surname", surname);
+            intent.putExtra("phonenumber", phonenumber);
+            intent.putExtra("productType", productType);
+            startActivity(intent);
+
+        } else if (getlock == "A5") {
+            Intent intent = new Intent(getApplicationContext(), A5Activity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("surname", surname);
+            intent.putExtra("phonenumber", phonenumber);
+            intent.putExtra("productType", productType);
+            startActivity(intent);
+
+        } else if (getlock == "A6") {
+            Intent intent = new Intent(getApplicationContext(), A6Activity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("surname", surname);
+            intent.putExtra("phonenumber", phonenumber);
+            intent.putExtra("productType", productType);
+            startActivity(intent);
+
+        }
 
 
 //        Locktalad locktalad = new Locktalad(name, surname, phonenumber, productType);
