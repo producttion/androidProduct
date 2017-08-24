@@ -1,8 +1,10 @@
-package com.example.teerasaksathu.production;
+package chrometab;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+
+import com.example.teerasaksathu.production.WebviewActivity;
 
 import chrometab.CustomTabActivityHelper;
 
@@ -16,5 +18,8 @@ public class WebviewFallback implements CustomTabActivityHelper.CustomTabFallbac
         Intent intent = new Intent(activity, WebviewActivity.class);
         intent.putExtra("KEY_URL", uri.toString());
         activity.startActivity(intent);
+
     }
+
+
 }
