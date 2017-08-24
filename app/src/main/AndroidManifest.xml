@@ -25,7 +25,8 @@
         <activity android:name=".A3Activity" />
         <activity android:name=".A4Activity" />
         <activity android:name=".A5Activity" />
-        <activity android:name=".A6Activity"></activity>
+        <activity android:name=".A6Activity" />
+        <activity android:name=".WebviewActivity"></activity>
     </application>
 
 </manifest>

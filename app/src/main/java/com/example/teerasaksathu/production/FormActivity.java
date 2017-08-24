@@ -92,20 +92,13 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void addDataTofireBase() {
-
         String name = etName.getText().toString().trim();
         String surname = etSurname.getText().toString().trim();
         String phonenumber = etPhonenumber.getText().toString().trim();
         String productType = spProductType.getSelectedItem().toString();
-
-
         Log.v("getlock", getlock);
-
-
         if (getlock == "A1") {
             Log.v("A1 st", getlock);
-
-
             Intent intent = new Intent(getApplicationContext(), A1Activity.class);
             intent.putExtra("name", name);
             intent.putExtra("surname", surname);
